@@ -5,6 +5,7 @@ from blog.models import Post
 from django.contrib.auth.models import User 
 from django.contrib.auth  import authenticate,  login, logout
 
+#html files
 # Create your views here.
 def home(request): 
     return render(request, 'home/home.html')
@@ -23,7 +24,6 @@ def contact(request):
             messages.success(request, "Your message has been successfully sent")
     return render(request, "home/contact.html")
 
-
 def about(request): 
     return render(request, 'home/about.html')
 #icontains used to get records that contains a specified value.
@@ -41,6 +41,7 @@ def search(request):
     params={'allPosts': allPosts, 'query': query}
     return render(request, 'home/search.html', params)
 
+# authentications
 def handleSignUp(request):
     if request.method=="POST":
         # Get the post parameters

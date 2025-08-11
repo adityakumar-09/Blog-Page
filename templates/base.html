@@ -117,9 +117,7 @@ SignUp
     <label for="pass2">Confirm Password</label>
     <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Enter your password again" required>
   </div>
- 
-
-        {% csrf_token %}
+  {% csrf_token %}
         <button type="submit" class="btn btn-primary">Submit</button>
 </form>
       </div>
@@ -128,14 +126,7 @@ SignUp
     </div>
   </div>
 </div>
-
-
-
-
-
-
-      {% block body %}  {% endblock body %}
-
+{% block body %}  {% endblock body %}
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
   <div class="modal-dialog">
