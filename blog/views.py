@@ -13,6 +13,8 @@ def blogHome(request):
 
 def blogPost(request, slug): 
     post=Post.objects.filter(slug=slug).first()
+    post.views += 1  # Increment the view count
+    post.save()  # Save the updated view count
     comments= BlogComment.objects.filter(post=post, parent=None)
     replies= BlogComment.objects.filter(post=post).exclude(parent=None)
     replyDict={}
